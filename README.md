@@ -1,2 +1,2 @@
 # solar-system
-Learning Three.js
+Learning Three.js - Making the solar system
