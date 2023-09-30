@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scrolling Sun with Solar System Outline</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: sans-serif;
+        }
+        #canvas {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+        .sun-outline {
+            width: 400px;
+            height: 260px;
+            border: 1px solid white;
+            border-radius: 50%;
+            position: absolute;
+            pointer-events: none;
+            transform: rotate(-45deg);
+            transform-origin: center;
+            background: transparent;
+        }
+        .sun-outline2 {
+            width: 600px;
+            height: 460px;
+            border: 1px solid white;
+            border-radius: 50%;
+            position: absolute;
+            pointer-events: none;
+            transform: rotate(-45deg);
+            transform-origin: center;
+            background: transparent;
+        }
+        .sun-outline3 {
+            width: 700px;
+            height: 560px;
+            border: 1px solid white;
+            border-radius: 50%;
+            position: absolute;
+            pointer-events: none;
+            transform: rotate(-45deg);
+            transform-origin: center;
+            background: transparent;
+        }
+        .sun-outline4 {
+            width: 800px;
+            height: 660px;
+            border: 1px solid white;
+            border-radius: 50%;
+            position: absolute;
+            pointer-events: none;
+            transform: rotate(-45deg);
+            transform-origin: center;
+            background: transparent;
+        }
+        .planet {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            position: absolute;
+            animation: rotatePlanet 50s infinite linear;
+            top: 230px;
+            left: 100px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+        .planet2 {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            position: absolute;
+            animation: rotatePlanet 75s infinite linear;
+            top: 330px;
+            left: 20px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+        .planet3 {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            position: absolute;
+            animation: rotatePlanet 100s infinite linear;
+            top: 500px;
+            left: 450px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+        .planet4 {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            position: absolute;
+            animation: rotatePlanet 20s infinite linear;
+            top: 300px;
+            left: 770px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+        @keyframes rotatePlanet {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        .circle {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: rgb(239, 238, 238);
+          position: absolute;
+          top: 30%;
+          left: 45%;
+          transform: translate(-50%, -50%);        
+        }
+        .circle2 {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: rgb(239, 238, 238);
+          position: absolute;
+          top: 50%;
+          left: 65%;
+          transform: translate(-50%, -50%);        
+        }
+        .circle3 {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: rgb(239, 238, 238);
+          position: absolute;
+          top: 20%;
+          left: 70%;
+          transform: translate(-50%, -50%);        
+        }
+        .circle4 {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: rgb(239, 238, 238);
+          position: absolute;
+          top: 60%;
+          left: 95%;
+          transform: translate(-50%, -50%);        
+        }
+        .circle5 {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: rgb(239, 238, 238);
+          position: absolute;
+          top: 30%;
+          left: 90%;
+          transform: translate(-50%, -50%);        
+        }
+        .circle6 {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: rgb(239, 238, 238);
+          position: absolute;
+          top: 90%;
+          left: 80%;
+          transform: translate(-50%, -50%);        
+        }
+        .circle7 {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: rgb(239, 238, 238);
+          position: absolute;
+          top: 75%;
+          left: 40%;
+          transform: translate(-50%, -50%);        
+        }
+        .circle8 {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: rgb(239, 238, 238);
+          position: absolute;
+          top: 45%;
+          left: 35%;
+          transform: translate(-50%, -50%);        
+        }
+        .circle9 {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: rgb(239, 238, 238);
+          position: absolute;
+          top: 10%;
+          left: 40%;
+          transform: translate(-50%, -50%);        
+        }
+        .circle10 {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: rgb(239, 238, 238);
+          position: absolute;
+          top: 90%;
+          left: 25%;
+          transform: translate(-50%, -50%);        
+        }
+        .circle11 {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: rgb(239, 238, 238);
+          position: absolute;
+          top: 10%;
+          left: 20%;
+          transform: translate(-50%, -50%);        
+        }
+        .circle12 {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: rgb(239, 238, 238);
+          position: absolute;
+          top: 60%;
+          left: 15%;
+          transform: translate(-50%, -50%);        
+        }
+        .star {
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background-color: rgb(111, 110, 110);
+          position: absolute;
+          top: 30%;
+          left: 25%;
+          transform: translate(-50%, -50%);        
+        }
+        .star2 {
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background-color: rgb(111, 110, 110);
+          position: absolute;
+          top: 70%;
+          left: 5%;
+          transform: translate(-50%, -50%);        
+        }
+        .star3 {
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background-color: rgb(111, 110, 110);
+          position: absolute;
+          top: 20%;
+          left: 5%;
+          transform: translate(-50%, -50%);        
+        }
+        .star4 {
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background-color: rgb(111, 110, 110);
+          position: absolute;
+          top: 70%;
+          left: 25%;
+          transform: translate(-50%, -50%);        
+        }
+        .star5 {
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background-color: rgb(111, 110, 110);
+          position: absolute;
+          top: 20%;
+          left: 45%;
+          transform: translate(-50%, -50%);        
+        }
+        .star6 {
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background-color: rgb(111, 110, 110);
+          position: absolute;
+          top: 80%;
+          left: 45%;
+          transform: translate(-50%, -50%);        
+        }
+        .star7 {
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background-color: rgb(111, 110, 110);
+          position: absolute;
+          top: 80%;
+          left: 60%;
+          transform: translate(-50%, -50%);        
+        }
+        .star8 {
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background-color: rgb(111, 110, 110);
+          position: absolute;
+          top: 35%;
+          left: 55%;
+          transform: translate(-50%, -50%);        
+        }
+        .star9 {
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background-color: rgb(111, 110, 110);
+          position: absolute;
+          top: 10%;
+          left: 65%;
+          transform: translate(-50%, -50%);        
+        }
+        .star10 {
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background-color: rgb(111, 110, 110);
+          position: absolute;
+          top: 50%;
+          left: 75%;
+          transform: translate(-50%, -50%);        
+        }
+        .star11 {
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background-color: rgb(111, 110, 110);
+          position: absolute;
+          top: 20%;
+          left: 85%;
+          transform: translate(-50%, -50%);        
+        }
+        .star12 {
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background-color: rgb(111, 110, 110);
+          position: absolute;
+          top: 80%;
+          left: 90%;
+          transform: translate(-50%, -50%);        
+        }
+    </style>
+</head>
+<body>
+    <div id="canvas">
+        <div class="sun-outline" style="top: 255px; left: 580px;">
+          <div class="planet" style="background-image: url('planet_texture.png');"></div>
+        </div>
+        <div class="sun-outline2" style="top: 195px; left: 520px;">
+          <div class="planet2" style="background-image: url('planet2_texture.jpg');"></div>
+        </div>
+        <div class="sun-outline3" style="top: 160px; left: 490px;">
+          <div class="planet3" style="background-image: url('planet3_texture.jpg');"></div>
+        </div>
+        <div class="sun-outline4" style="top: 130px; left: 470px;">
+          <div class="planet4" style="background-image: url('planet4_texture.jpg');"></div>
+        </div>
+        <div class="circle"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+        <div class="circle5"></div>
+        <div class="circle6"></div>
+        <div class="circle7"></div>
+        <div class="circle8"></div>
+        <div class="circle9"></div>
+        <div class="circle10"></div>
+        <div class="circle11"></div>
+        <div class="circle12"></div>
+        <div class="star"></div>
+        <div class="star2"></div>
+        <div class="star3"></div>
+        <div class="star4"></div>
+        <div class="star5"></div>
+        <div class="star6"></div>
+        <div class="star7"></div>
+        <div class="star8"></div>
+        <div class="star9"></div>
+        <div class="star10"></div>
+        <div class="star11"></div>
+        <div class="star12"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
+    <script>
+        // Initialize Three.js
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.getElementById('canvas').appendChild(renderer.domElement);
+
+        // Create the sun texture
+        const textureLoader = new THREE.TextureLoader();
+        const sunTexture = textureLoader.load('sun_texture.jpg');
+
+        // Create the sun sphere
+        const geometry = new THREE.SphereGeometry(1, 32, 32);
+        const material = new THREE.MeshBasicMaterial({ map: sunTexture });
+        const sun = new THREE.Mesh(geometry, material);
+        sun.position.x = 0;
+        scene.add(sun);
+
+        // Set the camera position
+        camera.position.z = 5;
+
+        // Function to handle window resizing
+        function onWindowResize() {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+    // Update the position of the sun outlines
+    const sunOutlines = document.getElementsByClassName('sun-outline');
+    const sunOutlines2 = document.getElementsByClassName('sun-outline2');
+    const sunOutlines3 = document.getElementsByClassName('sun-outline3');
+    const sunOutlines4 = document.getElementsByClassName('sun-outline4');
+
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+
+    // Update the left position of sun outlines based on the window width
+    for (let i = 0; i < sunOutlines.length; i++) {
+        const sunOutline = sunOutlines[i];
+        const initialLeft = 410; // Initial left position
+        const leftOffset = (windowWidth - 1200) / 2; // Adjust the offset based on the window width
+        const newLeft = initialLeft + leftOffset;
+        sunOutline.style.left = `${newLeft}px`;
+    }
+
+    for (let i = 0; i < sunOutlines2.length; i++) {
+        const sunOutline = sunOutlines2[i];
+        const initialLeft = 350; // Initial left position
+        const leftOffset = (windowWidth - 1200) / 2; // Adjust the offset based on the window width
+        const newLeft = initialLeft + leftOffset;
+        sunOutline.style.left = `${newLeft}px`;
+    }
+
+    for (let i = 0; i < sunOutlines3.length; i++) {
+        const sunOutline = sunOutlines3[i];
+        const initialLeft = 320; // Initial left position
+        const leftOffset = (windowWidth - 1200) / 2; // Adjust the offset based on the window width
+        const newLeft = initialLeft + leftOffset;
+        sunOutline.style.left = `${newLeft}px`;
+    }
+
+    for (let i = 0; i < sunOutlines4.length; i++) {
+        const sunOutline = sunOutlines4[i];
+        const initialLeft = 300; // Initial left position
+        const leftOffset = (windowWidth - 1200) / 2; // Adjust the offset based on the window width
+        const newLeft = initialLeft + leftOffset;
+        sunOutline.style.left = `${newLeft}px`;
+    }
+
+    // Adjust the top position of sun outlines based on the window height
+    for (let i = 0; i < sunOutlines.length; i++) {
+        const sunOutline = sunOutlines[i];
+        const initialTop = 290; // Initial top position
+        const topOffset = (windowHeight - 800) / 2; // Adjust the offset based on the window height
+        const newTop = initialTop + topOffset;
+        sunOutline.style.top = `${newTop}px`;
+    }
+
+    for (let i = 0; i < sunOutlines2.length; i++) {
+        const sunOutline = sunOutlines2[i];
+        const initialTop = 230; // Initial top position
+        const topOffset = (windowHeight - 800) / 2; // Adjust the offset based on the window height
+        const newTop = initialTop + topOffset;
+        sunOutline.style.top = `${newTop}px`;
+    }
+
+    for (let i = 0; i < sunOutlines3.length; i++) {
+        const sunOutline = sunOutlines3[i];
+        const initialTop = 195; // Initial top position
+        const topOffset = (windowHeight - 800) / 2; // Adjust the offset based on the window height
+        const newTop = initialTop + topOffset;
+        sunOutline.style.top = `${newTop}px`;
+    }
+
+    for (let i = 0; i < sunOutlines4.length; i++) {
+        const sunOutline = sunOutlines4[i];
+        const initialTop = 165; // Initial top position
+        const topOffset = (windowHeight - 800) / 2; // Adjust the offset based on the window height
+        const newTop = initialTop + topOffset;
+        sunOutline.style.top = `${newTop}px`;
+    }
+}
+
+window.addEventListener('resize', onWindowResize, false);
+// Function to update the scene
+function animate() {
+            requestAnimationFrame(animate);
+            sun.rotation.y += 0.002;
+            sun.rotation.x += 0.002;
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Function to handle scroll events
+        function handleScroll(event) {
+            event.preventDefault();
+        }
+        window.addEventListener('scroll', handleScroll, { passive: false });
+    </script>
+</body>
+</html>
